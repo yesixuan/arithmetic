@@ -8,7 +8,8 @@ type node struct {
 }
 
 type LinkedList struct {
-	size      int
+	size int
+	// 在插入以及删除节点的时候，我们需要找到待操作位置的前一个位置，有了虚拟头节点，逻辑会变得统一
 	dummyHead *node
 }
 
@@ -66,13 +67,13 @@ func (list *LinkedList) Contains(e interface{}) bool {
 	return false
 }
 
-func (list *LinkedList) Print() {
+func (list *LinkedList) Print() []interface{} {
 	res := make([]interface{}, 0)
 	currNode := list.dummyHead.next
 	for currNode != nil {
 		res = append(res, currNode.e)
 		currNode = currNode.next
 	}
-
 	fmt.Println(res, list.size)
+	return res
 }
