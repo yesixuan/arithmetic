@@ -3,6 +3,7 @@ package test
 import (
 	"arithmetic/dataStruct/bst"
 	"arithmetic/dataStruct/linkedList"
+	"arithmetic/dataStruct/maxHeap"
 	"testing"
 )
 
@@ -32,4 +33,13 @@ func TestBST(t *testing.T) {
 	// bst.RemoveMin()
 	bst.Remove(3)
 	bst.PreOrderNR()
+}
+
+func TestMaxHeap(t *testing.T) {
+	maxHeap := maxHeap.MaxHeap{}
+	maxHeap.Add(0)
+	maxHeap.Add(1)
+	maxHeap.Add(2)
+	maxHeap.Add(3)
+	maxHeap.Print()
 }
